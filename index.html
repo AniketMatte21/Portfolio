@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Portfolio of Aniket - Front-End Developer & Designer. Interactive scroll-driven portfolio.">
+  <title>Aniket | Front-End Developer &amp; Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Fixed Background Canvas for 300-Frame Panning Animation -->
+  <canvas id="animation-canvas"></canvas>
+  <div class="canvas-vignette"></div>
+
+  <!-- Header / Navigation -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="#home" class="logo" aria-label="Home">AM</a>
+
+      <nav class="nav-pill" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#technologies" class="nav-link">Technologies</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+        </ul>
+      </nav>
+
+      <a href="#contact" class="btn btn-header">Let's Talk</a>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <div class="content-wrapper">
+    <!-- Hero Section -->
+    <section id="home" class="section hero-section">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <span class="hero-greeting">I am Aniket</span>
+          <h1 class="hero-title">I Build Backend Systems &amp;<br>AI-Powered Applications</h1>
+          <p class="hero-description">
+            Java & Spring Boot Developer specializing in backend development, REST APIs, AI integrations, and full-stack
+            applications.
+          </p>
+          <div class="hero-actions">
+            <a href="#about" class="btn btn-cv">Download CV</a>
+          </div>
+          <div class="social-links">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path
+                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.79v8.37H6.46v-8.37M7.86 6.3a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26Z" />
+              </svg>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="GitHub">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path
+                  d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual-slot hero-right">
+          <a href="#contact" class="availability-badge" aria-label="Open to freelance projects &amp; collaborations">
+            <span class="status-indicator" aria-hidden="true">
+              <span class="status-dot"></span>
+              <span class="status-ping"></span>
+            </span>
+            <span class="availability-text">Open to freelance projects &amp; collaborations</span>
+            <svg class="availability-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 17L17 7M17 7H7M17 7V17" />
+            </svg>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="section about-section">
+      <div class="section-title-wrap">
+        <h2 class="section-title">About Me</h2>
+      </div>
+
+      <p class="about-summary">
+        I'm a Computer Engineering developer focused on building real-world applications using Java, Spring Boot,
+        React, databases, and AI/LLM technologies. I enjoy turning ideas into reliable, production-ready software.
+      </p>
+      <!-- 
+      <div class="approach-container">
+        <h3 class="approach-title">My Approach</h3>
+        <div class="approach-grid">
+          <div class="approach-item">
+            <span class="number-tag">01</span>
+            <span class="approach-text">Understand users &amp; goals</span>
+          </div>
+          <div class="approach-item">
+            <span class="number-tag">02</span>
+            <span class="approach-text">Create clean UI layouts</span>
+          </div>
+          <div class="approach-item">
+            <span class="number-tag">03</span>
+            <span class="approach-text">Responsive experiences</span>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Stats Counters -->
+      <!-- <div class="stats-row">
+        <div class="stat-block">
+          <div class="stat-number">02+</div>
+          <div class="stat-label">Years Of Experience</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-number">05+</div>
+          <div class="stat-label">Clients Served</div>
+        </div>
+      </div> -->
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="technologies" class="section technologies-section">
+      <div class="section-title-wrap">
+        <h2 class="section-title">Technologies</h2>
+        <p class="section-subtitle">Core stack, frameworks, databases &amp; architectures</p>
+      </div>
+
+      <div class="tech-marquee-wrapper">
+        <div class="tech-marquee-track">
+          <div class="tech-marquee-group">
+            <span class="tech-item">Java</span>
+            <span class="tech-separator" aria-hidden="true">&bull;</span>
+            <span class="tech-item">Python</span>
+            <span class="tech-separator" aria-hidden="true">&bull;</span>
+            <span class="tech-item">Spring Boot</span>
+            <span class="tech-separator" aria-hidden="true">&bull;</span>
+            <span class="tech-item">REST APIs</span>
+            <span class="tech-separator" aria-hidden="true">&bull;</span>
+            <span class="tech-item">MySQL</span>
+            <span class="tech-separator" aria-hidden="true">&bull;</span>
+            <span class="tech-item">Redis</span>
+            <span class="tech-separator" aria-hidden="true">&bull;</span>
+            <span class="tech-item">Kafka</span>
+            <span class="tech-separator" aria-hidden="true">&bull;</span>
+            <span class="tech-item">Microservices</span>
+            <span class="tech-separator" aria-hidden="true">&bull;</span>
+            <span class="tech-item">React</span>
+            <span class="tech-separator" aria-hidden="true">&bull;</span>
+            <span class="tech-item">AI/LLMs</span>
+            <span class="tech-separator" aria-hidden="true">&bull;</span>
+            <span class="tech-item">Mulesoft</span>
+            <span class="tech-separator" aria-hidden="true">&bull;</span>
+          </div>
+          <div class="tech-marquee-group" aria-hidden="true">
+            <span class="tech-item">Java</span>
+            <span class="tech-separator">&bull;</span>
+            <span class="tech-item">Python</span>
+            <span class="tech-separator">&bull;</span>
+            <span class="tech-item">Spring Boot</span>
+            <span class="tech-separator">&bull;</span>
+            <span class="tech-item">REST APIs</span>
+            <span class="tech-separator">&bull;</span>
+            <span class="tech-item">MySQL</span>
+            <span class="tech-separator">&bull;</span>
+            <span class="tech-item">Redis</span>
+            <span class="tech-separator">&bull;</span>
+            <span class="tech-item">Kafka</span>
+            <span class="tech-separator">&bull;</span>
+            <span class="tech-item">Microservices</span>
+            <span class="tech-separator">&bull;</span>
+            <span class="tech-item">React</span>
+            <span class="tech-separator">&bull;</span>
+            <span class="tech-item">AI/LLMs</span>
+            <span class="tech-separator">&bull;</span>
+            <span class="tech-item">Mulesoft</span>
+            <span class="tech-separator">&bull;</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services-section">
+      <div class="section-title-wrap">
+        <h2 class="section-title">Services</h2>
+        <p class="section-subtitle">Designing clean scalable responsive websites</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service Card 1 -->
+        <div class="card service-card">
+          <div class="card-body">
+            <h3 class="card-heading">UI/UX Website Design</h3>
+            <p class="card-text">Clean, user-focused layouts with clear structure, smooth navigation, and strong visual
+              hierarchy.</p>
+          </div>
+          <div class="card-pills-list">
+            <div class="pill-badge">Modern layouts</div>
+            <div class="pill-badge">Responsive design</div>
+          </div>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="card service-card">
+          <div class="card-body">
+            <h3 class="card-heading">Frontend Development</h3>
+            <p class="card-text">Responsive interfaces using HTML, CSS, and JavaScript for clean, consistent, reliable
+              performance.</p>
+          </div>
+          <div class="card-pills-list">
+            <div class="pill-badge">Clean HTML/CSS</div>
+            <div class="pill-badge">Smooth interactions</div>
+          </div>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="card service-card">
+          <div class="card-body">
+            <h3 class="card-heading">Performance &amp; Responsiveness</h3>
+            <p class="card-text">Fast, mobile-first websites optimized for speed, accessibility, and dependable
+              performance.</p>
+          </div>
+          <div class="card-pills-list">
+            <div class="pill-badge">Speed optimization</div>
+            <div class="pill-badge">Asset efficiency</div>
+          </div>
+        </div>
+
+        <!-- Service Card 4 -->
+        <div class="card service-card">
+          <div class="card-body">
+            <h3 class="card-heading">WordPress Implementation</h3>
+            <p class="card-text">Lightweight WordPress setups with easy updates, fast loading, and scalable, clean,
+              customizable layouts.</p>
+          </div>
+          <div class="card-pills-list">
+            <div class="pill-badge">Theme setup</div>
+            <div class="pill-badge">Easy management</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+      <div class="section-title-wrap">
+        <h2 class="section-title">Skills</h2>
+        <p class="section-subtitle">Crafting seamless UI/UX and clean code</p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Skill Card 1 -->
+        <div class="card skill-card">
+          <h3 class="card-heading">Core Skills</h3>
+          <div class="skills-tag-wrap">
+            <span class="tag-badge">UI/UX layout</span>
+            <span class="tag-badge">Frontend Dev</span>
+            <span class="tag-badge">Responsive Web Design</span>
+            <span class="tag-badge">Component-Based Design</span>
+          </div>
+        </div>
+
+        <!-- Skill Card 2 -->
+        <div class="card skill-card">
+          <h3 class="card-heading">Frontend Tech</h3>
+          <div class="skills-tag-wrap">
+            <span class="tag-badge">HTML</span>
+            <span class="tag-badge">CSS</span>
+            <span class="tag-badge">JS</span>
+            <span class="tag-badge">WordPress</span>
+          </div>
+        </div>
+
+        <!-- Skill Card 3 -->
+        <div class="card skill-card">
+          <h3 class="card-heading">Design Tools</h3>
+          <div class="skills-tag-wrap">
+            <span class="tag-badge">Figma</span>
+            <span class="tag-badge">Photoshop</span>
+            <span class="tag-badge">Illustrator</span>
+          </div>
+        </div>
+
+        <!-- Skill Card 4 -->
+        <div class="card skill-card">
+          <h3 class="card-heading">Tools &amp; Interaction</h3>
+          <div class="skills-tag-wrap">
+            <span class="tag-badge">GitHub</span>
+            <span class="tag-badge">Netlify</span>
+            <span class="tag-badge">GSAP</span>
+            <span class="tag-badge">UI Interactions</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+      <div class="section-title-wrap">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">A showcase of recent interactive design &amp; frontend work</p>
+      </div>
+
+      <div class="projects-grid">
+        <div class="card project-card">
+          <div class="project-header">
+            <span class="project-category">Web Experience</span>
+            <h3 class="card-heading">Kinetic Scroll Engine</h3>
+          </div>
+          <p class="card-text">High-performance canvas frame scrubbing with delta-time inertia physics and high-DPI
+            scaling.</p>
+          <div class="skills-tag-wrap">
+            <span class="tag-badge">Vanilla JS</span>
+            <span class="tag-badge">HTML5 Canvas</span>
+            <span class="tag-badge">CSS Glassmorphism</span>
+          </div>
+        </div>
+
+        <div class="card project-card">
+          <div class="project-header">
+            <span class="project-category">Design System</span>
+            <h3 class="card-heading">Minimal Dark UI Kit</h3>
+          </div>
+          <p class="card-text">Comprehensive responsive component kit featuring dark mode ergonomics and fluid
+            micro-interactions.</p>
+          <div class="skills-tag-wrap">
+            <span class="tag-badge">Figma</span>
+            <span class="tag-badge">Tokens</span>
+            <span class="tag-badge">Responsive</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Let's Talk Section -->
+    <section id="contact" class="section contact-section">
+      <div class="card contact-card">
+        <div class="section-title-wrap">
+          <h2 class="section-title">Let's Connect</h2>
+          <p class="section-subtitle">Have a project in mind or want to collaborate? Let's build something exceptional.
+          </p>
+        </div>
+        <div class="contact-actions">
+          <a href="mailto:vanshika@example.com" class="btn btn-primary">vanshika@example.com</a>
+          <a href="#home" class="btn btn-secondary">Back to Top &uarr;</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 Vanshika. All rights reserved. Crafted with clean code &amp; smooth scroll physics.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
