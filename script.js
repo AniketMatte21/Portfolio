@@ -216,6 +216,39 @@
     });
   });
 
+  // How It Works Pipeline Toggle
+  const howItWorksBtn = document.getElementById('btn-how-it-works');
+  const pipelineDrawer = document.getElementById('email-pipeline-drawer');
+  if (howItWorksBtn && pipelineDrawer) {
+    howItWorksBtn.addEventListener('click', () => {
+      const isExpanded = howItWorksBtn.getAttribute('aria-expanded') === 'true';
+      howItWorksBtn.setAttribute('aria-expanded', String(!isExpanded));
+      pipelineDrawer.hidden = isExpanded;
+    });
+  }
+
+  // DevPilot Image Switcher
+  const devpilotImg = document.getElementById('devpilot-project-img');
+  const switchBtns = document.querySelectorAll('.img-switch-btn');
+  if (devpilotImg && switchBtns.length > 0) {
+    switchBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetSrc = btn.getAttribute('data-img');
+        if (!targetSrc || devpilotImg.getAttribute('src') === targetSrc) return;
+
+        switchBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        devpilotImg.style.opacity = '0.15';
+        setTimeout(() => {
+          devpilotImg.src = targetSrc;
+          devpilotImg.alt = btn.getAttribute('aria-label') || 'DevPilot Screenshot';
+          devpilotImg.style.opacity = '1';
+        }, 120);
+      });
+    });
+  }
+
   // Initialize
   resizeCanvas();
   updateTargetFrame();
