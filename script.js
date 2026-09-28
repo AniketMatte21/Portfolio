@@ -172,6 +172,7 @@
   // Active Navigation Link Highlighting on Scroll
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
   function updateActiveNav() {
     const scrollY = window.pageYOffset || document.documentElement.scrollTop;
@@ -183,6 +184,12 @@
       
       if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
         navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${sectionId}`) {
+            link.classList.add('active');
+          }
+        });
+        mobileNavLinks.forEach(link => {
           link.classList.remove('active');
           if (link.getAttribute('href') === `#${sectionId}`) {
             link.classList.add('active');
@@ -215,6 +222,61 @@
       }
     });
   });
+
+  // Mobile Navigation Menu Toggle
+  const header = document.querySelector('.header');
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileNavMenu = document.getElementById('mobile-nav-menu');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-link, .btn-mobile-cta');
+
+  function closeMobileMenu() {
+    if (!mobileMenuBtn || !mobileNavMenu) return;
+    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    mobileNavMenu.classList.remove('is-open');
+    setTimeout(() => {
+      if (!mobileNavMenu.classList.contains('is-open')) {
+        mobileNavMenu.hidden = true;
+      }
+    }, 250);
+  }
+
+  function openMobileMenu() {
+    if (!mobileMenuBtn || !mobileNavMenu) return;
+    mobileNavMenu.hidden = false;
+    void mobileNavMenu.offsetWidth;
+    mobileNavMenu.classList.add('is-open');
+    mobileMenuBtn.setAttribute('aria-expanded', 'true');
+  }
+
+  if (mobileMenuBtn && mobileNavMenu) {
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+      if (isExpanded) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        closeMobileMenu();
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (header && !header.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeMobileMenu();
+      }
+    });
+  }
 
   // How It Works Pipeline Toggle
   const howItWorksBtn = document.getElementById('btn-how-it-works');
