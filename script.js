@@ -311,6 +311,210 @@
     });
   }
 
+  // BookMySeat 7-Step Flow Gallery & Lightbox
+  const bmsScreenshots = [
+    {
+      src: 'images/bookmyseat-events.png',
+      step: '1/7',
+      title: 'Event Discovery',
+      label: '1/7 \u2022 Event Discovery',
+      desc: 'Live experiences & feature films discovery catalog with real-time event status.'
+    },
+    {
+      src: 'images/bookmyseat-details.png',
+      step: '2/7',
+      title: 'Movie Details',
+      label: '2/7 \u2022 Movie Details',
+      desc: 'Feature film synopsis, trailer preview modal, metadata, and instant booking CTA.'
+    },
+    {
+      src: 'images/bookmyseat-showtimes.png',
+      step: '3/7',
+      title: 'Showtime Selection',
+      label: '3/7 \u2022 Showtime Selection',
+      desc: 'Cinema theater scheduling, date selector, and multi-format screens (IMAX, Dolby Atmos, ICE).'
+    },
+    {
+      src: 'images/bookmyseat-seats.png',
+      step: '4/7',
+      title: 'Interactive Seat Map',
+      label: '4/7 \u2022 Interactive Seat Map',
+      desc: 'Dynamic cinema seating matrix with real-time tier classification (Recliner, Gold, Silver) and Redis lock.'
+    },
+    {
+      src: 'images/bookmyseat-checkout.png',
+      step: '5/7',
+      title: 'Ticket Hold & Summary',
+      label: '5/7 \u2022 Ticket Hold & Summary',
+      desc: 'Confirmed reservation hold with itemized seat breakdown, taxes, convenience fees, and countdown timer.'
+    },
+    {
+      src: 'images/bookmyseat-payment.png',
+      step: '6/7',
+      title: 'Stripe Payment Processing',
+      label: '6/7 \u2022 Stripe Payment Checkout',
+      desc: 'Secure payment gateway integration with credit card validation, webhooks, and sandbox processing.'
+    },
+    {
+      src: 'images/bookmyseat-confirmed.png',
+      step: '7/7',
+      title: 'Booking Confirmed & Digital Pass',
+      label: '7/7 \u2022 Booking Confirmed',
+      desc: 'Official admission pass with verified booking reference, seat identifiers, email confirmation, and print pass.'
+    }
+  ];
+
+  let currentBmsIndex = 0;
+  const bmsImg = document.getElementById('bms-project-img');
+  const bmsStepLabel = document.getElementById('bms-step-label');
+  const bmsStepBtns = document.querySelectorAll('.bms-step-btn');
+  const bmsPrevBtn = document.getElementById('bms-prev-btn');
+  const bmsNextBtn = document.getElementById('bms-next-btn');
+  const bmsZoomBtn = document.getElementById('bms-zoom-btn');
+  const bmsGalleryContainer = document.getElementById('bms-gallery-container');
+
+  // Lightbox elements
+  const lightboxModal = document.getElementById('lightbox-modal');
+  const lightboxBackdrop = document.getElementById('lightbox-backdrop');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCloseBtn = document.getElementById('lightbox-close-btn');
+  const lightboxPrevBtn = document.getElementById('lightbox-prev');
+  const lightboxNextBtn = document.getElementById('lightbox-next');
+  const lightboxTitle = document.getElementById('lightbox-title');
+  const lightboxStepPill = document.getElementById('lightbox-step-pill');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+
+  function updateBmsGallery(index) {
+    if (index < 0) index = bmsScreenshots.length - 1;
+    if (index >= bmsScreenshots.length) index = 0;
+    currentBmsIndex = index;
+
+    const data = bmsScreenshots[currentBmsIndex];
+    if (bmsImg) {
+      bmsImg.style.opacity = '0.2';
+      setTimeout(() => {
+        bmsImg.src = data.src;
+        bmsImg.alt = `BookMySeat - ${data.title}`;
+        bmsImg.style.opacity = '1';
+      }, 120);
+    }
+
+    if (bmsStepLabel) {
+      bmsStepLabel.textContent = data.label;
+    }
+
+    bmsStepBtns.forEach((btn, i) => {
+      const isActive = i === currentBmsIndex;
+      btn.classList.toggle('active', isActive);
+      if (isActive && typeof btn.scrollIntoView === 'function') {
+        btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+      }
+    });
+
+    if (lightboxModal && !lightboxModal.hidden && lightboxImg) {
+      lightboxImg.style.opacity = '0.2';
+      setTimeout(() => {
+        lightboxImg.src = data.src;
+        lightboxImg.alt = data.title;
+        lightboxImg.style.opacity = '1';
+      }, 120);
+      if (lightboxTitle) lightboxTitle.textContent = data.title;
+      if (lightboxStepPill) lightboxStepPill.textContent = data.step;
+      if (lightboxCaption) lightboxCaption.textContent = data.desc;
+    }
+  }
+
+  if (bmsStepBtns.length > 0) {
+    bmsStepBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const idx = parseInt(btn.getAttribute('data-index'), 10);
+        if (!isNaN(idx)) updateBmsGallery(idx);
+      });
+    });
+  }
+
+  if (bmsPrevBtn) {
+    bmsPrevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      updateBmsGallery(currentBmsIndex - 1);
+    });
+  }
+
+  if (bmsNextBtn) {
+    bmsNextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      updateBmsGallery(currentBmsIndex + 1);
+    });
+  }
+
+  function openLightbox(index) {
+    if (!lightboxModal) return;
+    updateBmsGallery(index);
+    lightboxModal.hidden = false;
+    void lightboxModal.offsetWidth;
+    lightboxModal.classList.add('is-open');
+    lightboxModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    if (!lightboxModal) return;
+    lightboxModal.classList.remove('is-open');
+    lightboxModal.setAttribute('aria-hidden', 'true');
+    setTimeout(() => {
+      if (!lightboxModal.classList.contains('is-open')) {
+        lightboxModal.hidden = true;
+      }
+    }, 250);
+    document.body.style.overflow = '';
+  }
+
+  if (bmsZoomBtn) {
+    bmsZoomBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openLightbox(currentBmsIndex);
+    });
+  }
+
+  if (bmsGalleryContainer) {
+    bmsGalleryContainer.addEventListener('click', (e) => {
+      if (e.target.closest('.bms-nav-arrow') || e.target.closest('.bms-zoom-btn')) return;
+      openLightbox(currentBmsIndex);
+    });
+
+    bmsGalleryContainer.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        updateBmsGallery(currentBmsIndex - 1);
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        updateBmsGallery(currentBmsIndex + 1);
+      } else if (e.key === 'Enter') {
+        openLightbox(currentBmsIndex);
+      }
+    });
+  }
+
+  if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
+  if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+  if (lightboxPrevBtn) lightboxPrevBtn.addEventListener('click', () => updateBmsGallery(currentBmsIndex - 1));
+  if (lightboxNextBtn) lightboxNextBtn.addEventListener('click', () => updateBmsGallery(currentBmsIndex + 1));
+
+  document.addEventListener('keydown', (e) => {
+    if (lightboxModal && !lightboxModal.hidden && lightboxModal.classList.contains('is-open')) {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') updateBmsGallery(currentBmsIndex - 1);
+      if (e.key === 'ArrowRight') updateBmsGallery(currentBmsIndex + 1);
+    }
+  });
+
+  // Preload BookMySeat images for instantaneous switching
+  bmsScreenshots.forEach(shot => {
+    const preImg = new Image();
+    preImg.src = shot.src;
+  });
+
   // Initialize
   resizeCanvas();
   updateTargetFrame();

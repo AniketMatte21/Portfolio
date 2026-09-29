@@ -389,10 +389,71 @@
       <div class="projects-featured-grid">
         <!-- 1. BookMySeat — Spotlight Card -->
         <div class="card project-card project-card-spotlight">
-          <div class="project-spotlight-image-wrap">
-            <img src="assets/projects/bookmyseat.jpg" alt="BookMySeat Platform Preview" class="project-img"
-              loading="lazy">
-            <div class="project-img-overlay"></div>
+          <div class="project-spotlight-visual">
+            <div class="project-spotlight-image-wrap" id="bms-gallery-container" tabindex="0" role="region" aria-label="BookMySeat screenshots interactive preview">
+              <img id="bms-project-img" src="images/bookmyseat-events.png" alt="BookMySeat - Event Discovery Screen" class="project-img bms-img-fade" loading="lazy">
+              <div class="project-img-overlay"></div>
+
+              <!-- Top Left Step Pill Badge -->
+              <div class="bms-gallery-badge">
+                <span class="bms-gallery-dot"></span>
+                <span id="bms-step-label">1/7 &bull; Event Discovery</span>
+              </div>
+
+              <!-- Fullscreen Zoom Button -->
+              <button type="button" class="bms-zoom-btn" id="bms-zoom-btn" aria-label="View screenshot fullscreen in lightbox" title="View fullscreen">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <polyline points="9 21 3 21 3 15"></polyline>
+                  <line x1="21" y1="3" x2="14" y2="10"></line>
+                  <line x1="3" y1="21" x2="10" y2="14"></line>
+                </svg>
+              </button>
+
+              <!-- Gallery Navigation Arrows -->
+              <button type="button" class="bms-nav-arrow bms-nav-prev" id="bms-prev-btn" aria-label="Previous screenshot" title="Previous">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button type="button" class="bms-nav-arrow bms-nav-next" id="bms-next-btn" aria-label="Next screenshot" title="Next">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Booking Flow Step Switcher Tabs -->
+            <div class="bms-flow-bar" role="tablist" aria-label="BookMySeat flow steps">
+              <button type="button" class="bms-step-btn active" data-index="0" data-img="images/bookmyseat-events.png" data-label="1/7 &bull; Event Discovery" data-desc="Live experiences &amp; movie discovery catalog" aria-label="Step 1: Event Discovery">
+                <span class="step-num">01</span>
+                <span class="step-name">Discovery</span>
+              </button>
+              <button type="button" class="bms-step-btn" data-index="1" data-img="images/bookmyseat-details.png" data-label="2/7 &bull; Movie Details" data-desc="Synopsis, duration, ratings &amp; booking trigger" aria-label="Step 2: Movie Details">
+                <span class="step-num">02</span>
+                <span class="step-name">Details</span>
+              </button>
+              <button type="button" class="bms-step-btn" data-index="2" data-img="images/bookmyseat-showtimes.png" data-label="3/7 &bull; Showtime Selection" data-desc="Miraj Cinemas dates &amp; multi-screen show formats" aria-label="Step 3: Showtimes">
+                <span class="step-num">03</span>
+                <span class="step-name">Shows</span>
+              </button>
+              <button type="button" class="bms-step-btn" data-index="3" data-img="images/bookmyseat-seats.png" data-label="4/7 &bull; Interactive Seat Map" data-desc="Curved theater screen &amp; tiered seat locking" aria-label="Step 4: Seat Map">
+                <span class="step-num">04</span>
+                <span class="step-name">Seats</span>
+              </button>
+              <button type="button" class="bms-step-btn" data-index="4" data-img="images/bookmyseat-checkout.png" data-label="5/7 &bull; Ticket Hold &amp; Summary" data-desc="Hold reservation &amp; itemized fee breakdown" aria-label="Step 5: Hold">
+                <span class="step-num">05</span>
+                <span class="step-name">Hold</span>
+              </button>
+              <button type="button" class="bms-step-btn" data-index="5" data-img="images/bookmyseat-payment.png" data-label="6/7 &bull; Stripe Payment Checkout" data-desc="Secure card payment processing via Stripe" aria-label="Step 6: Payment">
+                <span class="step-num">06</span>
+                <span class="step-name">Pay</span>
+              </button>
+              <button type="button" class="bms-step-btn" data-index="6" data-img="images/bookmyseat-confirmed.png" data-label="7/7 &bull; Booking Confirmed" data-desc="Verified booking reference, pass &amp; confirmation email" aria-label="Step 7: Ticket Pass">
+                <span class="step-num">07</span>
+                <span class="step-name">Ticket</span>
+              </button>
+            </div>
           </div>
           <div class="project-spotlight-content">
             <div class="project-meta">
@@ -715,6 +776,41 @@
   <footer class="footer">
     <p>&copy; 2026 Aniket. All rights reserved. Crafted with clean code &amp; scalable architectures.</p>
   </footer>
+
+  <!-- Lightbox Modal for Fullscreen Screenshots -->
+  <div class="lightbox-modal" id="lightbox-modal" hidden aria-hidden="true" role="dialog" aria-label="Screenshot Lightbox">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <div class="lightbox-dialog">
+      <div class="lightbox-topbar">
+        <div class="lightbox-info">
+          <span class="lightbox-step-pill" id="lightbox-step-pill">1/7</span>
+          <span class="lightbox-title" id="lightbox-title">Event Discovery</span>
+        </div>
+        <button type="button" class="lightbox-close-btn" id="lightbox-close-btn" aria-label="Close Lightbox" title="Close (Esc)">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="lightbox-stage">
+        <img id="lightbox-img" src="images/bookmyseat-events.png" alt="Fullscreen screenshot preview">
+        <button type="button" class="lightbox-nav prev" id="lightbox-prev" aria-label="Previous screenshot" title="Previous">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button type="button" class="lightbox-nav next" id="lightbox-next" aria-label="Next screenshot" title="Next">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+      <div class="lightbox-caption" id="lightbox-caption">
+        Event &amp; movie discovery catalog with live shows
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
