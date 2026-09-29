@@ -24,7 +24,6 @@
     <div class="nav-container">
       <a href="#home" class="logo" aria-label="Home">AM</a>
 
-      <!-- Desktop Navigation Pill -->
       <nav class="nav-pill" aria-label="Main Navigation">
         <ul class="nav-links">
           <li><a href="#home" class="nav-link active">Home</a></li>
@@ -35,71 +34,7 @@
         </ul>
       </nav>
 
-      <div class="header-right-actions">
-        <a href="#contact" class="btn btn-header">Let's Talk</a>
-        <!-- Mobile Menu Hamburger Button -->
-        <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu"
-          aria-expanded="false" aria-controls="mobile-nav-menu">
-          <span class="hamburger-line line-1"></span>
-          <span class="hamburger-line line-2"></span>
-          <span class="hamburger-line line-3"></span>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Dropdown Navigation -->
-    <div class="mobile-nav-dropdown" id="mobile-nav-menu" hidden>
-      <nav class="mobile-nav-links" aria-label="Mobile Navigation">
-        <a href="#home" class="mobile-nav-link active">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-            <polyline points="9 22 9 12 15 12 15 22" />
-          </svg>
-          <span>Home</span>
-        </a>
-        <a href="#about" class="mobile-nav-link">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-            <circle cx="12" cy="7" r="4" />
-          </svg>
-          <span>About</span>
-        </a>
-        <a href="#technologies" class="mobile-nav-link">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-          </svg>
-          <span>Technologies</span>
-        </a>
-        <a href="#services" class="mobile-nav-link">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m18 16 4-4-4-4" />
-            <path d="m6 8-4 4 4 4" />
-            <path d="m14.5 4-5 16" />
-          </svg>
-          <span>Services</span>
-        </a>
-        <a href="#projects" class="mobile-nav-link">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
-            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-          </svg>
-          <span>Projects</span>
-        </a>
-        <div class="mobile-nav-divider"></div>
-        <a href="#contact" class="btn btn-mobile-cta">
-          <span>Let's Talk</span>
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="5" y1="12" x2="19" y2="12" />
-            <polyline points="12 5 19 12 12 19" />
-          </svg>
-        </a>
-      </nav>
+      <a href="#contact" class="btn btn-header">Let's Talk</a>
     </div>
   </header>
 
@@ -122,6 +57,7 @@
           <div class="social-links">
             <a href="https://www.linkedin.com/in/aniket-matte/" target="_blank" rel="noopener noreferrer"
               class="social-icon" aria-label="LinkedIn">
+
               <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
                 <path
                   d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.79v8.37H6.46v-8.37M7.86 6.3a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26Z" />
@@ -390,8 +326,10 @@
         <!-- 1. BookMySeat — Spotlight Card -->
         <div class="card project-card project-card-spotlight">
           <div class="project-spotlight-visual">
-            <div class="project-spotlight-image-wrap" id="bms-gallery-container" tabindex="0" role="region" aria-label="BookMySeat screenshots interactive preview">
-              <img id="bms-project-img" src="images/bookmyseat-events.png" alt="BookMySeat - Event Discovery Screen" class="project-img bms-img-fade" loading="lazy">
+            <div class="project-spotlight-image-wrap" id="bms-gallery-container" tabindex="0" role="region"
+              aria-label="BookMySeat screenshots interactive preview">
+              <img id="bms-project-img" src="images/bookmyseat-events.png" alt="BookMySeat - Event Discovery Screen"
+                class="project-img bms-img-fade" loading="lazy">
               <div class="project-img-overlay"></div>
 
               <!-- Top Left Step Pill Badge -->
@@ -401,8 +339,10 @@
               </div>
 
               <!-- Fullscreen Zoom Button -->
-              <button type="button" class="bms-zoom-btn" id="bms-zoom-btn" aria-label="View screenshot fullscreen in lightbox" title="View fullscreen">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <button type="button" class="bms-zoom-btn" id="bms-zoom-btn"
+                aria-label="View screenshot fullscreen in lightbox" title="View fullscreen">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="15 3 21 3 21 9"></polyline>
                   <polyline points="9 21 3 21 3 15"></polyline>
                   <line x1="21" y1="3" x2="14" y2="10"></line>
@@ -411,13 +351,17 @@
               </button>
 
               <!-- Gallery Navigation Arrows -->
-              <button type="button" class="bms-nav-arrow bms-nav-prev" id="bms-prev-btn" aria-label="Previous screenshot" title="Previous">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <button type="button" class="bms-nav-arrow bms-nav-prev" id="bms-prev-btn"
+                aria-label="Previous screenshot" title="Previous">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="15 18 9 12 15 6"></polyline>
                 </svg>
               </button>
-              <button type="button" class="bms-nav-arrow bms-nav-next" id="bms-next-btn" aria-label="Next screenshot" title="Next">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <button type="button" class="bms-nav-arrow bms-nav-next" id="bms-next-btn" aria-label="Next screenshot"
+                title="Next">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
               </button>
@@ -425,31 +369,45 @@
 
             <!-- Booking Flow Step Switcher Tabs -->
             <div class="bms-flow-bar" role="tablist" aria-label="BookMySeat flow steps">
-              <button type="button" class="bms-step-btn active" data-index="0" data-img="images/bookmyseat-events.png" data-label="1/7 &bull; Event Discovery" data-desc="Live experiences &amp; movie discovery catalog" aria-label="Step 1: Event Discovery">
+              <button type="button" class="bms-step-btn active" data-index="0" data-img="images/bookmyseat-events.png"
+                data-label="1/7 &bull; Event Discovery" data-desc="Live experiences &amp; movie discovery catalog"
+                aria-label="Step 1: Event Discovery">
                 <span class="step-num">01</span>
                 <span class="step-name">Discovery</span>
               </button>
-              <button type="button" class="bms-step-btn" data-index="1" data-img="images/bookmyseat-details.png" data-label="2/7 &bull; Movie Details" data-desc="Synopsis, duration, ratings &amp; booking trigger" aria-label="Step 2: Movie Details">
+              <button type="button" class="bms-step-btn" data-index="1" data-img="images/bookmyseat-details.png"
+                data-label="2/7 &bull; Movie Details" data-desc="Synopsis, duration, ratings &amp; booking trigger"
+                aria-label="Step 2: Movie Details">
                 <span class="step-num">02</span>
                 <span class="step-name">Details</span>
               </button>
-              <button type="button" class="bms-step-btn" data-index="2" data-img="images/bookmyseat-showtimes.png" data-label="3/7 &bull; Showtime Selection" data-desc="Miraj Cinemas dates &amp; multi-screen show formats" aria-label="Step 3: Showtimes">
+              <button type="button" class="bms-step-btn" data-index="2" data-img="images/bookmyseat-showtimes.png"
+                data-label="3/7 &bull; Showtime Selection"
+                data-desc="Miraj Cinemas dates &amp; multi-screen show formats" aria-label="Step 3: Showtimes">
                 <span class="step-num">03</span>
                 <span class="step-name">Shows</span>
               </button>
-              <button type="button" class="bms-step-btn" data-index="3" data-img="images/bookmyseat-seats.png" data-label="4/7 &bull; Interactive Seat Map" data-desc="Curved theater screen &amp; tiered seat locking" aria-label="Step 4: Seat Map">
+              <button type="button" class="bms-step-btn" data-index="3" data-img="images/bookmyseat-seats.png"
+                data-label="4/7 &bull; Interactive Seat Map" data-desc="Curved theater screen &amp; tiered seat locking"
+                aria-label="Step 4: Seat Map">
                 <span class="step-num">04</span>
                 <span class="step-name">Seats</span>
               </button>
-              <button type="button" class="bms-step-btn" data-index="4" data-img="images/bookmyseat-checkout.png" data-label="5/7 &bull; Ticket Hold &amp; Summary" data-desc="Hold reservation &amp; itemized fee breakdown" aria-label="Step 5: Hold">
+              <button type="button" class="bms-step-btn" data-index="4" data-img="images/bookmyseat-checkout.png"
+                data-label="5/7 &bull; Ticket Hold &amp; Summary"
+                data-desc="Hold reservation &amp; itemized fee breakdown" aria-label="Step 5: Hold">
                 <span class="step-num">05</span>
                 <span class="step-name">Hold</span>
               </button>
-              <button type="button" class="bms-step-btn" data-index="5" data-img="images/bookmyseat-payment.png" data-label="6/7 &bull; Stripe Payment Checkout" data-desc="Secure card payment processing via Stripe" aria-label="Step 6: Payment">
+              <button type="button" class="bms-step-btn" data-index="5" data-img="images/bookmyseat-payment.png"
+                data-label="6/7 &bull; Stripe Payment Checkout" data-desc="Secure card payment processing via Stripe"
+                aria-label="Step 6: Payment">
                 <span class="step-num">06</span>
                 <span class="step-name">Pay</span>
               </button>
-              <button type="button" class="bms-step-btn" data-index="6" data-img="images/bookmyseat-confirmed.png" data-label="7/7 &bull; Booking Confirmed" data-desc="Verified booking reference, pass &amp; confirmation email" aria-label="Step 7: Ticket Pass">
+              <button type="button" class="bms-step-btn" data-index="6" data-img="images/bookmyseat-confirmed.png"
+                data-label="7/7 &bull; Booking Confirmed"
+                data-desc="Verified booking reference, pass &amp; confirmation email" aria-label="Step 7: Ticket Pass">
                 <span class="step-num">07</span>
                 <span class="step-name">Ticket</span>
               </button>
@@ -544,7 +502,7 @@
 
               <div class="project-highlights">
                 <span class="highlight-item">🔐 GitHub OAuth integration</span>
-                <span class="highlight-item">📂 AST &amp; code chunking</span>
+                <span class="highlight-item">📂 code chunking</span>
                 <span class="highlight-item">🧠 RAG-based code indexing</span>
                 <span class="highlight-item">💬 Context-aware AI chat</span>
               </div>
@@ -759,15 +717,40 @@
 
     <!-- Contact / Let's Talk Section -->
     <section id="contact" class="section contact-section">
-      <div class="card contact-card">
-        <div class="section-title-wrap">
-          <h2 class="section-title">Let's Connect</h2>
-          <p class="section-subtitle">Have a project in mind or want to collaborate? Let's build something exceptional.
-          </p>
+      <div class="contact-container">
+        <span class="contact-eyebrow">LET'S TALK</span>
+        <h2 class="contact-heading">
+          Have a project idea or need help<br>building a backend or AI-powered application?
+        </h2>
+        <p class="contact-subtext">Let's build it together.</p>
+
+        <div class="contact-box-wrap">
+          <a href="mailto:aniketmatte12@gmail.com" class="contact-email-box"
+            aria-label="Email: aniketmatte12@gmail.com">
+            <span class="email-icon" aria-hidden="true">📧</span>
+            <span class="email-address">aniketmatte12@gmail.com</span>
+          </a>
         </div>
-        <div class="contact-actions">
-          <a href="mailto:aniketmatte12@gmail.com" class="btn btn-primary">aniketmatte12@gmail.com</a>
-          <a href="#home" class="btn btn-secondary">Back to Top &uarr;</a>
+
+        <div class="contact-cta-wrap">
+          <a href="mailto:aniketmatte12@gmail.com" class="btn btn-send-email">
+            <span>Send Me an Email</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <div class="contact-tags" aria-label="Core service competencies">
+          <span>Backend APIs</span>
+          <span class="contact-tag-dot" aria-hidden="true">&bull;</span>
+          <span>AI Integration</span>
+          <span class="contact-tag-dot" aria-hidden="true">&bull;</span>
+          <span>Web Applications</span>
+          <span class="contact-tag-dot" aria-hidden="true">&bull;</span>
+          <span>API Integrations</span>
         </div>
       </div>
     </section>
@@ -778,7 +761,8 @@
   </footer>
 
   <!-- Lightbox Modal for Fullscreen Screenshots -->
-  <div class="lightbox-modal" id="lightbox-modal" hidden aria-hidden="true" role="dialog" aria-label="Screenshot Lightbox">
+  <div class="lightbox-modal" id="lightbox-modal" hidden aria-hidden="true" role="dialog"
+    aria-label="Screenshot Lightbox">
     <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
     <div class="lightbox-dialog">
       <div class="lightbox-topbar">
@@ -786,8 +770,10 @@
           <span class="lightbox-step-pill" id="lightbox-step-pill">1/7</span>
           <span class="lightbox-title" id="lightbox-title">Event Discovery</span>
         </div>
-        <button type="button" class="lightbox-close-btn" id="lightbox-close-btn" aria-label="Close Lightbox" title="Close (Esc)">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <button type="button" class="lightbox-close-btn" id="lightbox-close-btn" aria-label="Close Lightbox"
+          title="Close (Esc)">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
@@ -795,19 +781,22 @@
       </div>
       <div class="lightbox-stage">
         <img id="lightbox-img" src="images/bookmyseat-events.png" alt="Fullscreen screenshot preview">
-        <button type="button" class="lightbox-nav prev" id="lightbox-prev" aria-label="Previous screenshot" title="Previous">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <button type="button" class="lightbox-nav prev" id="lightbox-prev" aria-label="Previous screenshot"
+          title="Previous">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
             <polyline points="15 18 9 12 15 6"></polyline>
           </svg>
         </button>
         <button type="button" class="lightbox-nav next" id="lightbox-next" aria-label="Next screenshot" title="Next">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
             <polyline points="9 18 15 12 9 6"></polyline>
           </svg>
         </button>
       </div>
       <div class="lightbox-caption" id="lightbox-caption">
-        Event &amp; movie discovery catalog with live shows
+        Live experiences &amp; movie discovery catalog with real-time event status.
       </div>
     </div>
   </div>
